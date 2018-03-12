@@ -1,10 +1,18 @@
 NAME=fgielow/calibro
 
+OSFLAG :=
+MS :=
+ifeq ($(OS),Windows_NT)
+	ROOT = %cd:\=/%
+else
+	ROOT = `pwd`
+endif
+
 run: examples
-	docker container run --rm -it -v `pwd`/examples:/root/calibro_V1.76/examples $(NAME)
+		docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V1.76/examples $(NAME)
 
 simplest: examples
-	docker container run --rm -it -v `pwd`/examples:/root/calibro_V1.76/examples $(NAME) simplest.sh ${TAG}
+		docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V1.76/examples $(NAME) simplest.sh ${TAG}
 
 build: Dockerfile
 	docker build -t $(NAME) .
