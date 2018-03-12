@@ -1,7 +1,13 @@
 NAME=fgielow/calibro
 
 run:
-	docker container run --rm -it -v `pwd`/ddfc-source/src/firefly_dynamic_clustering:/workspace/bake/source/ns-3.14.1/src/firefly_dynamic_clustering $(NAME)
+	docker container run --rm -it -v `pwd`/examples:/root/calibro_V1.76/examples $(NAME)
 
-build: Dockerfile
+build: Dockerfile simplest
 	docker build -t $(NAME) .
+
+simplest:
+	wget http://www.esru.strath.ac.uk/Downloads/Calibro/calibro_V1.76.tar.gz
+	tar xvzf calibro_V1.76.tar.gz
+	mv calibro_V1.76/examples ./
+	rm -rf calibro_V1.76.tar.gz calibro_V1.76
