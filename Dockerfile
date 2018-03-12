@@ -16,7 +16,7 @@ RUN apt-fast -y install texlive-base texlive texlive-full
 RUN add-apt-repository "deb http://www.stats.bris.ac.uk/R/bin/linux/ubuntu trusty/" && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9 && apt-get update
 
 # Dependencies
-RUN apt-get -y install gfortran r-base r-base-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install gfortran r-base r-base-dev
 
 WORKDIR /root
 
@@ -34,7 +34,9 @@ RUN R --vanilla -e "install.packages('src.tar.gz')"
 
 RUN chmod +x calibrino
 
-COPY ./.calibro_helper.sh /root/.calibro_helper.sh
+COPY ./build-dependencies/.calibro_helper.sh /root/.calibro_helper.sh
+
+COPY ./build-dependencies/simplest.sh /usr/local/bin/
 
 RUN echo '[[ -f /root/.calibro_helper.sh ]] && source /root/.calibro_helper.sh' >> /root/.bashrc
 

@@ -3,6 +3,9 @@ NAME=fgielow/calibro
 run: examples
 	docker container run --rm -it -v `pwd`/examples:/root/calibro_V1.76/examples $(NAME)
 
+simplest:
+	docker container run --rm -it -v `pwd`/examples:/root/calibro_V1.76/examples $(NAME) simplest.sh ${TAG}
+
 build: Dockerfile
 	docker build -t $(NAME) .
 
