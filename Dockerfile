@@ -21,7 +21,7 @@ RUN apt-get -y install gfortran r-base r-base-dev
 WORKDIR /root
 
 # R dependencies for Calibro
-RUN R --vanilla -e "install.packages(c('R6', 'coda', 'MASS', 'modeest','sensitivity', 'optparse', 'jsonlite', 'knitr', 'tinytex'), repos = 'https://cran.ma.imperial.ac.uk/')"
+RUN R --vanilla -e "install.packages(c('R6', 'coda', 'MASS', 'modeest','sensitivity', 'optparse', 'jsonlite', 'knitr', 'tinytex', 'xtable'), repos = 'https://cran.ma.imperial.ac.uk/')"
 
 # Calibro
 RUN wget http://www.esru.strath.ac.uk/Downloads/Calibro/calibro_V1.76.tar.gz && \
