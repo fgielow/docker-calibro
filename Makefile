@@ -9,10 +9,10 @@ else
 endif
 
 run: examples
-		docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V1.76/examples $(NAME)
+	docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V1.76/examples $(NAME)
 
 simplest: examples
-		docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V1.76/examples $(NAME) simplest.sh ${TAG}
+	docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V1.76/examples $(NAME) simplest.sh ${TAG}
 
 build: Dockerfile
 	docker build -t $(NAME) .
