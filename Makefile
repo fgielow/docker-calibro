@@ -1,9 +1,9 @@
 NAME=fgielow/calibro
 
-run:
+run: examples
 	docker container run --rm -it -v `pwd`/examples:/root/calibro_V1.76/examples $(NAME)
 
-build: Dockerfile examples
+build: Dockerfile
 	docker build -t $(NAME) .
 
 examples:
