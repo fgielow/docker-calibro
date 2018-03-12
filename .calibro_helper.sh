@@ -16,3 +16,4 @@ echo ""
 echo ""
 
 alias calibro-simplest="cd /root/calibro_V1.76/examples/simplest; calibrino --cal simplest --obs obs.csv --sim sims.csv --input inputs.csv --bc bc.csv"
+export PATH=/root/calibro_V1.76:$PATH

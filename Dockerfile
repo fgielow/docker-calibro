@@ -34,9 +34,8 @@ RUN R --vanilla -e "install.packages('src.tar.gz')"
 
 RUN chmod +x calibrino
 
-RUN export PATH="`pwd`:$PATH"
-
 COPY ./.calibro_helper.sh /root/.calibro_helper.sh
+
 RUN echo '[[ -f /root/.calibro_helper.sh ]] && source /root/.calibro_helper.sh' >> /root/.bashrc
 
 # CLEANUP
