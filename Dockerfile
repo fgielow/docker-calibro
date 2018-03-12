@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Fernando Gielow <fgielow@arbnco.com>
 LABEL Description="Docker image for running calibro ESP-r"
 
-# Basa needs
+# Base needs
 RUN apt-get update && apt-get install -y software-properties-common sudo vim curl wget git
 
 # Calibro seems to like generating pdfs using latex.... Big dependency but what can we do :shrugs:
