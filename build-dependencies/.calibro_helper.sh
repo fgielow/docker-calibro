@@ -11,12 +11,11 @@ echo "You can execute the SIMPLEST example simulation to test the environment by
 echo "    $ calibro-simplest"
 echo ""
 echo "This will effectively run the commands: "
-echo "    $ cd /root/calibro_V1.76/examples/simplest"
+echo "    $ cd /root/calibro_V2.1/examples/simplest"
 echo "    $ calibrino --cal simplest --obs obs.csv --sim sims.csv --input inputs.csv --bc bc.csv"
 echo ""
 echo "==========================================================================================="
 echo ""
 echo ""
 
-alias calibro-simplest="cd /root/calibro_V1.76/examples/simplest; calibrino --cal simplest --obs obs.csv --sim sims.csv --input inputs.csv --bc bc.csv"
-export PATH=/root/calibro_V1.76:$PATH
+alias calibro-simplest="cd /root/calibro_V2.1/examples/simplest; calibrino --cal simplest --obs obs.csv --sim sims.csv --input inputs.csv --bc bc.csv"

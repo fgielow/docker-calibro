@@ -9,16 +9,16 @@ else
 endif
 
 run: examples
-	docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V1.76/examples $(NAME)
+	docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V2.1/examples $(NAME)
 
 simplest: examples
-	docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V1.76/examples $(NAME) simplest.sh ${TAG}
+	docker container run --rm -it -v $(ROOT)/examples:/root/calibro_V2.1/examples $(NAME) simplest.sh ${TAG}
 
 build: Dockerfile
 	docker build -t $(NAME) .
 
 examples:
-	wget http://www.esru.strath.ac.uk/Downloads/Calibro/calibro_V1.76.tar.gz
-	tar xvzf calibro_V1.76.tar.gz
-	mv calibro_V1.76/examples ./
-	rm -rf calibro_V1.76.tar.gz calibro_V1.76
+	wget http://www.esru.strath.ac.uk/Downloads/Calibro/calibro_V2.1.tar.gz
+	tar xvzf calibro_V2.1.tar.gz
+	mv calibro_V2.1/examples ./
+	rm -rf calibro_V2.1.tar.gz calibro_V2.1
