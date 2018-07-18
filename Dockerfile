@@ -35,6 +35,8 @@ RUN ln -s /usr/local/lib/R/site-library/calibro/calibrino ./
 
 COPY ./build-dependencies/.calibro_helper.sh /root/.calibro_helper.sh
 
+COPY ./build-dependencies/simplest.sh /usr/local/bin/
+
 RUN echo '[[ -f /root/.calibro_helper.sh ]] && source /root/.calibro_helper.sh' >> /root/.bashrc
 
 # # CLEANUP

@@ -1,4 +1,4 @@
-NAME=fgielow/calibro
+NAME=fgielow/calibro:2.1
 
 OSFLAG :=
 MS :=
