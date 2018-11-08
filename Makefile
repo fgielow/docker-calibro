@@ -17,6 +17,9 @@ simplest: examples
 build: Dockerfile
 	docker build -t $(NAME) .
 
+build-no-cache: Dockerfile
+	docker build --no-cache -t $(NAME) .
+
 examples:
 	wget http://www.esru.strath.ac.uk/Downloads/Calibro/calibro_V2.1.tar.gz
 	tar xvzf calibro_V2.1.tar.gz
